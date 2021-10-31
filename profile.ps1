@@ -22,6 +22,10 @@ function loadCustom($customFilename) {
     Import-Module $modulePath;
 }
 
+function to-extension($fromExtension, $toExtension) {
+    Get-ChildItem -Recurse *.$fromExtension | Rename-Item -NewName { $_.Name.Replace(".$fromExtension", ".$toExtension") }
+}
+
 function sarcastic($text) {
     $sarcasticText = '';
     $index = 0;
