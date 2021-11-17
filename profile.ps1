@@ -72,6 +72,12 @@ function remove($item) {
     Remove-Item -Force -Recurse -Path $item
 }
 
+function git-sarcastic($commitMessage) {
+    $sarcasticMessage = sarcastic($commitMessage);
+    git commit -m $sarcasticMessage;
+    echo $sarcasticMessage;
+}
+
 loadCustom("git.psm1");
 loadCustom("window-movement.psm1");
 loadCustom("util-calls.psm1");
