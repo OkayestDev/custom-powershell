@@ -78,6 +78,10 @@ function git-sarcastic($commitMessage) {
     echo $sarcasticMessage;
 }
 
+function docker-sh($imageId) {
+    docker run -it --entrypoint /bin/bash $imageId;
+}
+
 loadCustom("git.psm1");
 loadCustom("window-movement.psm1");
 loadCustom("util-calls.psm1");
