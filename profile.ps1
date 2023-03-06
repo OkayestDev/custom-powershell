@@ -16,6 +16,10 @@ function killProcessById($id) {
     taskkill -F -PID $id;
 }
 
+function to-720($inputFile) {
+    ffmpeg -i $inputfile -vf "scale=1280x720" "out.mp4"
+}
+
 function loadCustom($customFilename) {
     $basePath = "C:\Windows\System32\WindowsPowerShell\v1.0\customs";
     $modulePath = "$basePath/$customFilename";
