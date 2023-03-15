@@ -97,6 +97,7 @@ Set-Alias -Name pweb -Value phpWebConnect;
 Set-Alias -Name php-workspace -Value phpWorkspace;
 Set-Alias -Name node-workspace -Value nodeWorkspace;
 Set-Alias -Name git-current -Value gitPushOrPullCurrent;
+Set-Alias -Name gitc -Value gitPushOrPullCurrent;
 Set-Alias -Name git-stats -Value gitStats;
 Set-Alias -Name delete-branches-like -Value gitDeleteAllBranchesLike;
 Set-Alias -Name git-checkout-like -Value gitCheckoutBranchLike;
