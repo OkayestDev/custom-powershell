@@ -26,7 +26,7 @@ function loadCustom($customFilename) {
     Import-Module $modulePath;
 }
 
-function to-extension($fromExtension, $toExtension) {
+function toExtension($fromExtension, $toExtension) {
     Get-ChildItem -Recurse *.$fromExtension | Rename-Item -NewName { $_.Name.Replace(".$fromExtension", ".$toExtension") }
 }
 
@@ -52,20 +52,20 @@ function sarcastic($text) {
 }
 
 # Must be in code to work as expected
-function jest-debug($test) {
+function jestDebug($test) {
     # Send f5 to start debugger in code
     Send-AU3Key -Key "{F5}";
     clear;
     node --inspect=0.0.0.0:9228 ./node_modules/jest/bin/jest.js --runInBand --forceExit $test
 }
 
-function node-debug() {
+function nodeDebug() {
     Send-AU3Key -Key "{F5}";
     clear;
     node --inspect-brk=0.0.0.0:9228 $args
 }
 
-function babel-jest-debug($test) {
+function babelJestDebug($test) {
     # Send f5 to start debugger in code
     clear;
     Send-AU3Key -Key "{F5}";
@@ -76,13 +76,13 @@ function remove($item) {
     Remove-Item -Force -Recurse -Path $item
 }
 
-function git-sarcastic($commitMessage) {
+function gitSarcastic($commitMessage) {
     $sarcasticMessage = sarcastic($commitMessage);
     git commit -m $sarcasticMessage;
     echo $sarcasticMessage;
 }
 
-function docker-sh($imageId) {
+function dockerSh($imageId) {
     docker run -it --entrypoint /bin/bash $imageId;
 }
 
@@ -106,7 +106,6 @@ Set-Alias -Name profile-location -Value profileLocation;
 Set-Alias -Name open-branch -Value openBranchInBrowser;
 Set-Alias -Name get-process-by-port -Value getProcessByPort
 Set-Alias -Name kill-process-by-id -Value killProcessById
-Set-Alias -Name homee-dump -Value homeeDump
 Set-Alias -Name fetch-merge -Value fetchMerge
 Set-Alias -Name 24g-ticket -Value 24gTicket
 

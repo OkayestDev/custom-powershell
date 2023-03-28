@@ -1,4 +1,4 @@
-function open-test($file) {
+function openTest($file) {
     $baseDir = Get-Location;
     $result = Get-ChildItem -Path $baseDir -Recurse -Filter "*test*"  | where { 
         $_.FullName -match $file;
@@ -9,7 +9,7 @@ function open-test($file) {
     code $result.FullName;
 }
 
-function open-file($file) {
+function openFile($file) {
     $baseDir = Get-Location;
     $result = Get-ChildItem -Path $baseDir -Recurse | where { 
         $_.FullName -match $file;
@@ -20,7 +20,9 @@ function open-file($file) {
     code $result.FullName;
 }
 
-function make-and-open($path) {
+function makeAndOpen($path) {
     New-Item $path;
     code $path;
 }
+
+Set-Alias -Name open-test -Value openTest
